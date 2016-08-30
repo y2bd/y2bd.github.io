@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jason Lo - Articles</title>
+    <description>that is, for you
+</description>
+    <link>
+    https://github.com/siawyoung/immaculate</link>
+    
+      
+      <item>
+        <title>Making a Game: a Postmortem</title>
+        
+          <description>&lt;p&gt;&lt;em&gt;Note: This post was originally featured on &lt;a href=&quot;http://cse125.ucsd.edu/2016/cse125g1/postmortem&quot;&gt;Excessive Furniture&lt;/a&gt;, a blog for my final project course at UCSD.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;We did it!&lt;/p&gt;
+
+&lt;p&gt;It’s been an extremely long ten weeks. We all spent most of our time on this project (to the point where I personally didn’t go to any of my other classes’ lectures!), and even though we didn’t end up having to pull any all-nighters (save for Dexter, but those were totally of his own free will) we obviously put a lot of effort into things. &lt;span id=&quot;Jeff&quot; class=&quot;margin-toggle sidenote-number&quot;&gt;&lt;/span&gt;
+      &lt;span class=&quot;sidenote&quot;&gt;Jeff has considerably more lines than us because he committed his 167 code to the repo. Elton doesn’t have many lines because he forgot to commit with his Github email :(&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://cse125.ucsd.edu/2016/cse125g1/assets/images/pm/github.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now that everything has been finalized, let’s talk about the ten weeks in detail.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Wed, 01 Jun 2016 00:00:00 -0700</pubDate>
+        <link>
+        https://github.com/siawyoung/immaculate/blog/2016/06/01/making-a-game-a-postmortem/</link>
+        <guid isPermaLink="true">https://github.com/siawyoung/immaculate/blog/2016/06/01/making-a-game-a-postmortem/</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Texture Synthesis</title>
+        
+          <description>&lt;p&gt;&lt;em&gt;Note: This post was originally featured on &lt;a href=&quot;https://medium.com/@graphicalblues&quot;&gt;Graphical Blues&lt;/a&gt;, a blog for my Advanced Graphics course&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;For my final project, I worked on implementing image quilting — generating
+larger versions of smaller images that approximate the textures of the original
+image. Below are some of the original textures that’ll we be trying to expand.&lt;/p&gt;
+
+&lt;figure class=&quot;fullwidth&quot;&gt;
+  &lt;amp-img width=&quot;931&quot; height=&quot;632&quot; layout=&quot;responsive&quot; src=&quot;/assets/posts/texture/original.png&quot; alt=&quot;Original textures&quot; title=&quot;Original textures&quot;&gt;&lt;/amp-img&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The general algorithm works best with images that already have the general
+texture “appearance”. As we’ll see later, it doesn’t work very well on
+non-textural images.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Tue, 15 Mar 2016 00:00:00 -0700</pubDate>
+        <link>
+        https://github.com/siawyoung/immaculate/blog/2016/03/15/texture-synthesis/</link>
+        <guid isPermaLink="true">https://github.com/siawyoung/immaculate/blog/2016/03/15/texture-synthesis/</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Creating a Parallax Scrolling Effect on Windows Phone</title>
+        
+          <description>&lt;div style=&quot;position:relative;padding-bottom:167%&quot;&gt;
+  &lt;iframe src=&quot;https://gfycat.com/ifr/SimpleLiveAnnelid&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; width=&quot;100%&quot; height=&quot;100%&quot; style=&quot;position:absolute;top:0;left:0;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;tl;dr: &lt;a href=&quot;https://github.com/y2bd/WPParallaxScrolling&quot;&gt;Here’s a commented sample project if you’re in a hurry&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Windows Phone 8’s scrollviews have a property where if you scroll past the content area, the content is squished. Nokia’s &lt;a href=&quot;http://www.nokia.com/us-en/apps/app-social/&quot;&gt;App Social&lt;/a&gt; has a cool but subtle effect that takes advantage of this. If you’re looking at a recommendation list within the app and try pulling the list down, you’ll notice that the header image doesn’t scroll with the rest of the list. Instead, it scrolls slower than everything else, as well as expands to fill the space made by the squished scrollview.&lt;/p&gt;
+
+&lt;p&gt;If you’ve ever played with an iOS device, you should know this effect well, as it’s present in so many apps on that platform. My favorite example is probably within &lt;a href=&quot;http://dayoneapp.com/&quot;&gt;Day One&lt;/a&gt;, an awesome diary app, where within your diary entries you can set a header photo that behaves similarly.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Tue, 18 Mar 2014 19:24:00 -0700</pubDate>
+        <link>
+        https://github.com/siawyoung/immaculate/blog/2014/03/18/creating-a-parallax-scrolling-effect-on-windows-phone/</link>
+        <guid isPermaLink="true">https://github.com/siawyoung/immaculate/blog/2014/03/18/creating-a-parallax-scrolling-effect-on-windows-phone/</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Ordering voice commands on the &quot;Did You Know?&quot; page</title>
+        
+          <description>&lt;p&gt;Just a small tip for a small problem I ran into.&lt;/p&gt;
+
+&lt;p&gt;If your WP app has voice commands defined, you’ll get a “Did You Know?” page where the user can see examples of all of the
+voice commands your app has. If you have a lot of voice commands available, it might get a bit messy.&lt;/p&gt;
+
+&lt;figure class=&quot;fullwidth&quot;&gt;
+  &lt;amp-img width=&quot;768&quot; height=&quot;1280&quot; layout=&quot;responsive&quot; src=&quot;/assets/posts/didyouknow.png&quot; alt=&quot;There&#39;s no sense of order at all!&quot; title=&quot;There&#39;s no sense of order at all!&quot;&gt;&lt;/amp-img&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;What’s more confusing is that the order of the commands on this page probably won’t match up with the order
+you defined them in your VCD file.&lt;/p&gt;
+
+&lt;p&gt;It turns out that they’re displayed in alphabetical order, with the key being the &lt;code class=&quot;highlighter-rouge&quot;&gt;Name&lt;/code&gt; attribute of your &lt;code class=&quot;highlighter-rouge&quot;&gt;Command&lt;/code&gt; object, which means that you can adjust your names to order them how you want, perhaps by prepending them with letters or numbers.&lt;/p&gt;
+
+&lt;p&gt;In my particular case, that means that my commands would go from&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;Command&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;SearchPokemon&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;Command&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;SearchMoves&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;Command&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;SearchTypes&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;Command&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;SearchDualTypes&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;to the following with numbered prefixes&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;Command&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;00_SearchPokemon&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;Command&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;01_SearchMoves&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;Command&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;02_SearchTypes&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;Command&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;03_SearchDualTypes&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;If you plan on inserting more commands later on, you’ll have to rename older ones to get the order you want, so I’d recommend using &lt;code class=&quot;highlighter-rouge&quot;&gt;string.Contains(&quot;base-name-of-command&quot;)&lt;/code&gt; rather than equality checks in your code so that even if the prefix changes, your code will still work without having to do a million find-and-replaces.&lt;/p&gt;
+</description>
+        
+        <pubDate>Thu, 30 Jan 2014 14:05:00 -0800</pubDate>
+        <link>
+        https://github.com/siawyoung/immaculate/blog/2014/01/30/ordering-voice-commands-on-the-did-you-know-page/</link>
+        <guid isPermaLink="true">https://github.com/siawyoung/immaculate/blog/2014/01/30/ordering-voice-commands-on-the-did-you-know-page/</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Fixing the Long List Selector&#39;s Scrollbar Spacing Issue</title>
+        
+          <description>&lt;p&gt;Windows Phone’s Long List Selector has an annoying problem. Its scrollbar takes up actual horizontal space on the layout grid, pushing your list items to the left. Now this normally isn’t a problem; you can just offset your list items accordingly. The problem though is that if your list ever has too few elements such that scrolling is not necessary, the scrollbar’s &lt;code class=&quot;highlighter-rouge&quot;&gt;Visibility&lt;/code&gt; will be set to &lt;code class=&quot;highlighter-rouge&quot;&gt;Collapsed&lt;/code&gt; and no longer take up any horizontal space, meaning that your offsets will cause your items to stick &lt;em&gt;too far&lt;/em&gt; off of the right edge.&lt;/p&gt;
+
+&lt;p&gt;Here is a simple Style that you can add to a Resources file (or just a &lt;code class=&quot;highlighter-rouge&quot;&gt;phone:PhoneApplicationPage.Resources&lt;/code&gt; block) that will solve this problem:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;Style&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Key=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;LLSFloatingScrollbarStyle&quot;&lt;/span&gt;
+               &lt;span class=&quot;na&quot;&gt;TargetType=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;phone:LongListSelector&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;Setter&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Background&quot;&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;Value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Transparent&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;Setter&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Foreground&quot;&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;Value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{StaticResource PhoneForegroundBrush}&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;Setter&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Template&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;Setter.Value&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;ControlTemplate&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;TargetType=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;phone:LongListSelector&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;Grid&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Background=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{TemplateBinding Background}&quot;&lt;/span&gt;
+                      &lt;span class=&quot;na&quot;&gt;d:DesignWidth=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;480&quot;&lt;/span&gt;
+                      &lt;span class=&quot;na&quot;&gt;d:DesignHeight=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;800&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;VisualStateManager.VisualStateGroups&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;VisualStateGroup&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ScrollStates&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                            &lt;span class=&quot;nt&quot;&gt;&amp;lt;VisualStateGroup.Transitions&amp;gt;&lt;/span&gt;
+                                &lt;span class=&quot;nt&quot;&gt;&amp;lt;VisualTransition&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;GeneratedDuration=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;00:00:00.5&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+                            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/VisualStateGroup.Transitions&amp;gt;&lt;/span&gt;
+                            &lt;span class=&quot;nt&quot;&gt;&amp;lt;VisualState&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Scrolling&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                                &lt;span class=&quot;nt&quot;&gt;&amp;lt;Storyboard&amp;gt;&lt;/span&gt;
+                                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;DoubleAnimation&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Duration=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0&quot;&lt;/span&gt;
+                                                     &lt;span class=&quot;na&quot;&gt;To=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1&quot;&lt;/span&gt;
+                                                     &lt;span class=&quot;na&quot;&gt;Storyboard.TargetProperty=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Opacity&quot;&lt;/span&gt;
+                                                     &lt;span class=&quot;na&quot;&gt;Storyboard.TargetName=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;VerticalScrollBar&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+                                &lt;span class=&quot;nt&quot;&gt;&amp;lt;/Storyboard&amp;gt;&lt;/span&gt;
+                            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/VisualState&amp;gt;&lt;/span&gt;
+                            &lt;span class=&quot;nt&quot;&gt;&amp;lt;VisualState&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;NotScrolling&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/VisualStateGroup&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/VisualStateManager.VisualStateGroups&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;Grid&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Margin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{TemplateBinding Padding}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;ViewportControl&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ViewportControl&quot;&lt;/span&gt;
+                                         &lt;span class=&quot;na&quot;&gt;HorizontalContentAlignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Stretch&quot;&lt;/span&gt;
+                                         &lt;span class=&quot;na&quot;&gt;VerticalAlignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Top&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;ScrollBar&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;VerticalScrollBar&quot;&lt;/span&gt;
+                                   &lt;span class=&quot;na&quot;&gt;Margin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;4,0,-12,0&quot;&lt;/span&gt;
+                                   &lt;span class=&quot;na&quot;&gt;Opacity=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0&quot;&lt;/span&gt;
+                                   &lt;span class=&quot;na&quot;&gt;HorizontalAlignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Right&quot;&lt;/span&gt;
+                                   &lt;span class=&quot;na&quot;&gt;Orientation=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Vertical&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/Grid&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;/Grid&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ControlTemplate&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/Setter.Value&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/Setter&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/Style&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- then on your long list selector... --&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;phone:LongListSelector&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Style=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{StaticResource LLSFloatingScrollbarStyle}&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;What this will do is cause the scrollbar to float on top of the long list selector instead of taking up horizontal space, which means that it will never push the list’s content to the left. A note though: take heed of the &lt;code class=&quot;highlighter-rouge&quot;&gt;Margin&lt;/code&gt; attribute of the &lt;code class=&quot;highlighter-rouge&quot;&gt;Scrollbar&lt;/code&gt; tag. You may need to adjust this to get the scrollbar to go to where you want. I personally like my scrollbars flush against the right side of the screen.&lt;/p&gt;
+</description>
+        
+        <pubDate>Thu, 31 Oct 2013 23:53:00 -0700</pubDate>
+        <link>
+        https://github.com/siawyoung/immaculate/blog/2013/10/31/fixing-the-long-list-selectors-scrollbar-spacing-issue/</link>
+        <guid isPermaLink="true">https://github.com/siawyoung/immaculate/blog/2013/10/31/fixing-the-long-list-selectors-scrollbar-spacing-issue/</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>My multiline Textbox configuration</title>
+        
+          <description>&lt;p&gt;I’m still working on Quill, but I figured this construct was useful enough for me to save in its
+purest form, before I uglify it with orientation hacks.&lt;/p&gt;
+
+&lt;p&gt;This is an implementation of a properly-behaving multiline TextBox for Windows Phone. The original implementation
+was sourced from &lt;a href=&quot;http://klingdigital.net/2013/06/scrollviewer-and-multiline-textbox-windowsphone&quot;&gt;KlingDigital&lt;/a&gt;.
+I just made extremely minor modifications, mostly refactoring to make it easier to modify (adding an input scope,
+supporting landscape, etc).&lt;/p&gt;
+
+&lt;p&gt;Here is the XAML:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;phone:PhoneApplicationPage&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;x:Class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Autocomplete.MainPage&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;xmlns=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;xmlns:x=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;xmlns:phone=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;xmlns:shell=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;xmlns:d=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.microsoft.com/expression/blend/2008&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;xmlns:mc=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;mc:Ignorable=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;d&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;FontFamily=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{StaticResource PhoneFontFamilyNormal}&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;FontSize=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{StaticResource PhoneFontSizeNormal}&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;Foreground=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{StaticResource PhoneForegroundBrush}&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;SupportedOrientations=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Portrait&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Orientation=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Portrait&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;shell:SystemTray.IsVisible=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;True&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;Loaded=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;PhoneApplicationPage_Loaded&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;c&quot;&gt;&amp;lt;!--LayoutRoot is the root grid where all page content is placed--&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;Grid&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;LayoutRoot&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Background=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Transparent&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;Grid.RowDefinitions&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;RowDefinition/&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;RowDefinition&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Auto&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/Grid.RowDefinitions&amp;gt;&lt;/span&gt;
+
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;ScrollViewer&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Scroller&quot;&lt;/span&gt;
+                      &lt;span class=&quot;na&quot;&gt;Background=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#1ba1e2&quot;&lt;/span&gt;
+                      &lt;span class=&quot;na&quot;&gt;Grid.Row=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;StackPanel&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;VerticalAlignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Top&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;TextBox&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ScrollerInput&quot;&lt;/span&gt;
+                         &lt;span class=&quot;na&quot;&gt;TextWrapping=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Wrap&quot;&lt;/span&gt;
+                         &lt;span class=&quot;na&quot;&gt;AcceptsReturn=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;True&quot;&lt;/span&gt;
+                         &lt;span class=&quot;na&quot;&gt;TextChanged=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ScrollerInput_TextChanged&quot;&lt;/span&gt;
+                         &lt;span class=&quot;na&quot;&gt;GotFocus=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ScrollerInput_GotFocus&quot;&lt;/span&gt;
+                         &lt;span class=&quot;na&quot;&gt;LostFocus=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ScrollerInput_LostFocus&quot;&lt;/span&gt;
+                         &lt;span class=&quot;na&quot;&gt;Tap=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ScrollerInput_Tap&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/StackPanel&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ScrollViewer&amp;gt;&lt;/span&gt;
+
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;Grid&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;KeyboardPlaceholder&quot;&lt;/span&gt;
+              &lt;span class=&quot;na&quot;&gt;Grid.Row=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1&quot;&lt;/span&gt;
+              &lt;span class=&quot;na&quot;&gt;Visibility=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Collapsed&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/Grid&amp;gt;&lt;/span&gt;    
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/phone:PhoneApplicationPage&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;and here is the codebehind:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Microsoft.Phone.Controls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;System.Windows&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;System.Windows.Controls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;System.Windows.Media&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Autocomplete&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;partial&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MainPage&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PhoneApplicationPage&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PortraitHeight&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;336&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_inputHeight&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_tapHeight&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// Constructor
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;MainPage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nf&quot;&gt;InitializeComponent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;SizePlaceholder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;KeyboardPlaceholder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Height&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PortraitHeight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;ForceLayout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;App&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RootFrame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RenderTransform&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;CompositeTransform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+      &lt;span class=&quot;n&quot;&gt;LayoutRoot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;UpdateLayout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;PhoneApplicationPage_Loaded&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RoutedEventArgs&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;ScrollerInput_TextChanged&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TextChangedEventArgs&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// updates seem to be late if we don&#39;t invoke them with the dispatcher
+&lt;/span&gt;      &lt;span class=&quot;n&quot;&gt;Dispatcher&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;BeginInvoke&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;currentInputHeight&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ScrollerInput&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ActualHeight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;currentInputHeight&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_inputHeight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;c1&quot;&gt;// scroll up by the difference between the current box size and the old box size
+&lt;/span&gt;          &lt;span class=&quot;n&quot;&gt;Scroller&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;ScrollToVerticalOffset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Scroller&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;VerticalOffset&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;currentInputHeight&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_inputHeight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+        &lt;span class=&quot;n&quot;&gt;_inputHeight&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;currentInputHeight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;ScrollerInput_GotFocus&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RoutedEventArgs&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;KeyboardPlaceholder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Visibility&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Visibility&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Visible&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;nf&quot;&gt;SizePlaceholder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+      &lt;span class=&quot;nf&quot;&gt;ForceLayout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+      &lt;span class=&quot;n&quot;&gt;Scroller&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;ScrollToVerticalOffset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_tapHeight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;ScrollerInput_LostFocus&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RoutedEventArgs&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;KeyboardPlaceholder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Visibility&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Visibility&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Collapsed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;ScrollerInput_Tap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Windows&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GestureEventArgs&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;_tapHeight&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;GetPosition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ScrollerInput&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Y&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;120&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Hopefully this template will prove useful in the future.&lt;/p&gt;
+</description>
+        
+        <pubDate>Tue, 27 Aug 2013 20:04:00 -0700</pubDate>
+        <link>
+        https://github.com/siawyoung/immaculate/blog/2013/08/27/my-multiline-textbox-configuration/</link>
+        <guid isPermaLink="true">https://github.com/siawyoung/immaculate/blog/2013/08/27/my-multiline-textbox-configuration/</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Fixing alignment issues with DataTemplateSelector</title>
+        
+          <description>&lt;p&gt;I’m currently working on a journaling application for WP8. While designing the page for browsing through past entries, I found that I needed to be able to switch between data templates for the &lt;code class=&quot;highlighter-rouge&quot;&gt;LongListSelector&lt;/code&gt; housed in the page. Some journal entries would have just text, some would have only a header photo, and some would have both, and I needed to display the entries differently for all three cases.&lt;/p&gt;
+
+&lt;p&gt;I found &lt;a href=&quot;http://www.geekchamp.com/articles/implementing-windows-phone-7-datatemplateselector-and-customdatatemplateselector&quot;&gt;this article&lt;/a&gt; describing how to recreate WPF’s &lt;code class=&quot;highlighter-rouge&quot;&gt;DataTemplateSelector&lt;/code&gt; class for Windows Phone. It worked fine–after remaking the base abstract class and extending it for my specific case, all you need to do is specify the different data templates in your xaml:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;DataTemplate&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Key=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;EntryListItemTemplate&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;sel:EntryItemTemplateSelector&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;sel:EntryItemTemplateSelector.Both&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;DataTemplate&amp;gt;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- content here --&amp;gt;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;/DataTemplate&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/sel:EntryItemTemplateSelector.Both&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;sel:EntryItemTemplateSelector.OnlyImage&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;DataTemplate&amp;gt;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- content here --&amp;gt;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;/DataTemplate&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/sel:EntryItemTemplateSelector.OnlyImage&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;sel:EntryItemTemplateSelector.OnlyText&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;DataTemplate&amp;gt;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- content here --&amp;gt;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;/DataTemplate&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/sel:EntryItemTemplateSelector.OnlyText&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/sel:EntryItemTemplateSelector&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/DataTemplate&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A bit verbose, but it got the job done thankfully. The LongListSelector would now switch between templates as required.&lt;/p&gt;
+
+&lt;p&gt;There was a bit of a problem though.&lt;/p&gt;
+
+&lt;figure class=&quot;fullwidth&quot;&gt;
+  &lt;amp-img width=&quot;768&quot; height=&quot;1280&quot; layout=&quot;responsive&quot; src=&quot;/assets/posts/centered.png&quot; alt=&quot;All of the elements are centered and small!&quot; title=&quot;All of the elements are centered and small!&quot;&gt;&lt;/amp-img&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Mordecai has the right idea.&lt;/p&gt;
+
+&lt;p&gt;All of the elements in the LongListSelector were no longer listening to the standard alignment and sizing rules, instead being only as wide as their content and staying put in the center.&lt;/p&gt;
+
+&lt;p&gt;I tried adjusting margins, hardcoding widths, &lt;code class=&quot;highlighter-rouge&quot;&gt;HorizontalAlignment=Stretch&lt;/code&gt; &lt;em&gt;everything&lt;/em&gt;, and either it wouldn’t work, or it would make things even worse.&lt;/p&gt;
+
+&lt;p&gt;After a lot of vague googling (what exactly would you call this problem? I honestly had no idea), I arrove at the correct solution. My &lt;code class=&quot;highlighter-rouge&quot;&gt;EntryItemTemplateSelector&lt;/code&gt;, inheriting from &lt;code class=&quot;highlighter-rouge&quot;&gt;ContentControl&lt;/code&gt;, has a new property named &lt;code class=&quot;highlighter-rouge&quot;&gt;HorizontalContentAlignment&lt;/code&gt;, which &lt;a href=&quot;http://msdn.microsoft.com/en-us/library/system.windows.controls.control.horizontalcontentalignment.aspx&quot;&gt;sets the alignment of the control’s &lt;em&gt;content&lt;/em&gt; rather than the control itself&lt;/a&gt;. So all you have to do then is&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;sel:EntryItemTemplateSelector&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;HorizontalContentAlignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Stretch&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;which gets you&lt;/p&gt;
+
+&lt;figure class=&quot;fullwidth&quot;&gt;
+  &lt;p&gt;&amp;lt;amp-img width=”768” height=”1280” layout=”responsive” src=”/assets/posts/aligned.png” alt=”“Now every element is taking up the correct amount of space!&quot; title=”“Now every element is taking up the correct amount of space!&quot;&amp;gt;&amp;lt;/amp-img&amp;gt;&amp;lt;/figure&amp;gt;&lt;/p&gt;
+
+  &lt;p&gt;Nothing satisfies Mordecai though.&lt;/p&gt;
+&lt;/figure&gt;
+</description>
+        
+        <pubDate>Fri, 16 Aug 2013 19:24:00 -0700</pubDate>
+        <link>
+        https://github.com/siawyoung/immaculate/blog/2013/08/16/fixing-alignment-issues-with-datatemplateselector/</link>
+        <guid isPermaLink="true">https://github.com/siawyoung/immaculate/blog/2013/08/16/fixing-alignment-issues-with-datatemplateselector/</guid>
+      </item>
+      
+    
+  </channel>
+</rss>

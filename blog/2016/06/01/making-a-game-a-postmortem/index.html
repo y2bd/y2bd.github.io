@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html ⚡ lang="en">
+  <head>
+  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+
+  <title>Making a Game: a Postmortem</title>
+  <meta name="description" content="Note: This post was originally featured on Excessive Furniture, a blog for my final project course at UCSD.We did it!It’s been an extremely long ten weeks. W...">
+
+  <link rel="canonical" href="https://github.com/siawyoung/immaculate/blog/2016/06/01/making-a-game-a-postmortem/">
+  <link rel="alternate" type="application/rss+xml" title="this has yet to be defined" href="https://github.com/siawyoung/immaculate/feed.xml">
+  <link href="https://fonts.googleapis.com/css?family=Catamaran" rel="stylesheet">
+
+  <script type="application/ld+json">
+  
+{
+  "@context": "http://schema.org",
+  "@type": "NewsArticle",
+  "mainEntityOfPage": "https://github.com/siawyoung/immaculate/blog/2016/06/01/making-a-game-a-postmortem/",
+  "headline": "Making a Game: a Postmortem",
+  "datePublished": "2016-06-01T00:00:00-07:00",
+  "dateModified": "2016-06-01T00:00:00-07:00",
+  "description": "Note: This post was originally featured on Excessive Furniture, a blog for my final project course at UCSD.We did it!It’s been an extremely long ten weeks. W...",
+  "author": {
+    "@type": "Person",
+    "name": "Jason Lo"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "this has yet to be defined",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://github.com/siawyoung/immaculate",
+      "width": 60,
+      "height": 60
+    }
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://github.com/siawyoung/immaculate",
+    "height": 60,
+    "width": 60
+  }
+}
+
+  </script>
+
+  <style amp-custom>
+  
+  /* Import ET Book styles
+   adapted from https://github.com/edwardtufte/et-book/blob/gh-pages/et-book.css */
+@font-face {
+  font-family: "et-book";
+  src: url("/assets/et-book/et-book-roman-line-figures/et-book-roman-line-figures.eot");
+  src: url("/assets/et-book/et-book-roman-line-figures/et-book-roman-line-figures.eot?#iefix") format("embedded-opentype"), url("/assets/et-book/et-book-roman-line-figures/et-book-roman-line-figures.woff") format("woff"), url("/assets/et-book/et-book-roman-line-figures/et-book-roman-line-figures.ttf") format("truetype"), url("/assets/et-book/et-book-roman-line-figures/et-book-roman-line-figures.svg#etbookromanosf") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "et-book";
+  src: url("/assets/et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.eot");
+  src: url("/assets/et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.eot?#iefix") format("embedded-opentype"), url("/assets/et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.woff") format("woff"), url("/assets/et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.ttf") format("truetype"), url("/assets/et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.svg#etbookromanosf") format("svg");
+  font-weight: normal;
+  font-style: italic; }
+@font-face {
+  font-family: "et-book";
+  src: url("/assets/et-book/et-book-bold-line-figures/et-book-bold-line-figures.eot");
+  src: url("/assets/et-book/et-book-bold-line-figures/et-book-bold-line-figures.eot?#iefix") format("embedded-opentype"), url("/assets/et-book/et-book-bold-line-figures/et-book-bold-line-figures.woff") format("woff"), url("/assets/et-book/et-book-bold-line-figures/et-book-bold-line-figures.ttf") format("truetype"), url("/assets/et-book/et-book-bold-line-figures/et-book-bold-line-figures.svg#etbookromanosf") format("svg");
+  font-weight: bold;
+  font-style: normal; }
+@font-face {
+  font-family: "et-book-roman-old-style";
+  src: url("/assets/et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.eot");
+  src: url("/assets/et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.eot?#iefix") format("embedded-opentype"), url("/assets/et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.woff") format("woff"), url("/assets/et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.ttf") format("truetype"), url("/assets/et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.svg#etbookromanosf") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+/* Tufte CSS styles */
+html {
+  font-size: 15px; }
+
+body {
+  width: 87.5%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 12.5%;
+  font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+  background-color: #fffff8;
+  color: #111;
+  max-width: 1400px;
+  counter-reset: sidenote-counter; }
+
+h1 {
+  font-weight: 400;
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+  font-size: 3.2rem;
+  line-height: 1; }
+
+h2 {
+  font-style: italic;
+  font-weight: 400;
+  margin-top: 2.1rem;
+  margin-bottom: 0;
+  font-size: 2.2rem;
+  line-height: 1; }
+
+h3 {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.7rem;
+  margin-top: 2rem;
+  margin-bottom: 0;
+  line-height: 1; }
+
+p.subtitle {
+  font-style: italic;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  display: block;
+  line-height: 1; }
+
+.numeral {
+  font-family: et-book-roman-old-style; }
+
+.danger {
+  color: red; }
+
+article {
+  position: relative;
+  padding: 5rem 0rem; }
+
+section {
+  padding-top: 1rem;
+  padding-bottom: 1rem; }
+
+p, ol, ul, .pagination a, .pagination em, table {
+  font-size: 1.4rem; }
+
+p {
+  line-height: 2rem;
+  margin-top: 1.4rem;
+  margin-bottom: 1.4rem;
+  padding-right: 0;
+  vertical-align: baseline; }
+
+/* Chapter Epigraphs */
+div.epigraph {
+  margin: 5em 0; }
+
+div.epigraph > blockquote {
+  margin-top: 3em;
+  margin-bottom: 3em; }
+
+div.epigraph > blockquote, div.epigraph > blockquote > p {
+  font-style: italic; }
+
+div.epigraph > blockquote > footer {
+  font-style: normal; }
+
+div.epigraph > blockquote > footer > cite {
+  font-style: italic; }
+
+/* end chapter epigraphs styles */
+blockquote {
+  font-size: 1.4rem; }
+
+blockquote p {
+  width: 80%; }
+
+blockquote .footer {
+  width: 50%;
+  font-size: 1.1rem;
+  text-align: right; }
+
+ol, ul {
+  width: 85%;
+  -webkit-padding-start: 5%;
+  -webkit-padding-end: 5%; }
+
+li {
+  padding: 0.5rem 0; }
+
+figure {
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  max-width: 55%;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+  margin: 0 0 3em 0; }
+
+figcaption {
+  float: right;
+  clear: right;
+  margin-right: -48%;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  vertical-align: baseline;
+  position: relative;
+  max-width: 40%; }
+
+figure.fullwidth figcaption {
+  margin-right: 24%; }
+
+/* Links: replicate underline that clears descenders */
+a:link, a:visited {
+  color: inherit; }
+
+a:link {
+  text-decoration: none;
+  background: -webkit-linear-gradient(#fffff8, #fffff8), -webkit-linear-gradient(#fffff8, #fffff8), -webkit-linear-gradient(#333, #333);
+  background: linear-gradient(#fffff8, #fffff8), linear-gradient(#fffff8, #fffff8), linear-gradient(#333, #333);
+  -webkit-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+  -moz-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+  background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+  background-repeat: no-repeat, no-repeat, repeat-x;
+  text-shadow: 0.03em 0 #fffff8, -0.03em 0 #fffff8, 0 0.03em #fffff8, 0 -0.03em #fffff8, 0.06em 0 #fffff8, -0.06em 0 #fffff8, 0.09em 0 #fffff8, -0.09em 0 #fffff8, 0.12em 0 #fffff8, -0.12em 0 #fffff8, 0.15em 0 #fffff8, -0.15em 0 #fffff8;
+  background-position: 0% 93%, 100% 93%, 0% 93%; }
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  a:link {
+    background-position-y: 87%, 87%, 87%; } }
+a:link::selection {
+  text-shadow: 0.03em 0 #b4d5fe, -0.03em 0 #b4d5fe, 0 0.03em #b4d5fe, 0 -0.03em #b4d5fe, 0.06em 0 #b4d5fe, -0.06em 0 #b4d5fe, 0.09em 0 #b4d5fe, -0.09em 0 #b4d5fe, 0.12em 0 #b4d5fe, -0.12em 0 #b4d5fe, 0.15em 0 #b4d5fe, -0.15em 0 #b4d5fe;
+  background: #b4d5fe; }
+
+a:link::-moz-selection {
+  text-shadow: 0.03em 0 #b4d5fe, -0.03em 0 #b4d5fe, 0 0.03em #b4d5fe, 0 -0.03em #b4d5fe, 0.06em 0 #b4d5fe, -0.06em 0 #b4d5fe, 0.09em 0 #b4d5fe, -0.09em 0 #b4d5fe, 0.12em 0 #b4d5fe, -0.12em 0 #b4d5fe, 0.15em 0 #b4d5fe, -0.15em 0 #b4d5fe;
+  background: #b4d5fe; }
+
+/* Sidenotes, margin notes, figures, captions */
+img {
+  max-width: 100%; }
+
+.sidenote, .marginnote {
+  float: right;
+  clear: right;
+  margin-right: -60%;
+  width: 50%;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.1rem;
+  line-height: 1.3;
+  vertical-align: baseline;
+  position: relative; }
+
+.table-caption {
+  float: right;
+  clear: right;
+  margin-right: -60%;
+  width: 50%;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.0rem;
+  line-height: 1.6; }
+
+.sidenote-number {
+  counter-increment: sidenote-counter; }
+
+.sidenote-number:after, .sidenote:before {
+  content: counter(sidenote-counter) " ";
+  font-family: et-book-roman-old-style;
+  position: relative;
+  vertical-align: baseline; }
+
+.sidenote-number:after {
+  content: counter(sidenote-counter);
+  font-size: 1rem;
+  top: -0.5rem;
+  left: 0.1rem; }
+
+.sidenote:before {
+  content: counter(sidenote-counter) " ";
+  top: -0.5rem; }
+
+p, footer, table, div.table-wrapper-small, div.supertable-wrapper > p, div.booktabs-wrapper {
+  width: 80%; }
+
+div.fullwidth, table.fullwidth {
+  width: 100%; }
+
+div.table-wrapper {
+  overflow-x: auto;
+  font-family: "Trebuchet MS", "Gill Sans", "Gill Sans MT", sans-serif; }
+
+@media screen and (max-width: 760px) {
+  p, h1, h2, h3, footer {
+    width: 100%; }
+
+  pre.code {
+    width: 87.5%; }
+
+  ul {
+    width: 85%; }
+
+  figure {
+    max-width: 90%; }
+
+  figcaption, figure.fullwidth figcaption {
+    margin-right: 0%;
+    max-width: none; }
+
+  blockquote p, blockquote .footer {
+    width: 90%; } }
+.sans {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  letter-spacing: .03em; }
+
+.code {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 1.125rem;
+  line-height: 1.6; }
+
+h1 .code, h2 .code, h3 .code {
+  font-size: 0.80em; }
+
+.marginnote .code, .sidenote .code {
+  font-size: 1rem; }
+
+pre.code {
+  width: 52.5%;
+  padding-left: 2.5%;
+  overflow-x: auto; }
+
+.fullwidth {
+  max-width: 90%;
+  clear: both; }
+
+span.newthought {
+  font-variant: small-caps;
+  font-size: 1.2em; }
+
+.margin-toggle {
+  display: none; }
+
+.sidenote-number {
+  display: inline; }
+
+.margin-toggle:not(.sidenote-number) {
+  display: none; }
+
+@media (max-width: 760px) {
+  .margin-toggle:not(.sidenote-number) {
+    display: none; }
+
+  .sidenote, .marginnote {
+    display: none; }
+
+  .margin-toggle:checked + .sidenote,
+  .margin-toggle:checked + .marginnote {
+    display: block;
+    float: left;
+    left: 1rem;
+    clear: both;
+    width: 95%;
+    margin: 1rem 2.5%;
+    vertical-align: baseline;
+    position: relative; }
+
+  label {
+    cursor: pointer; }
+
+  pre.code {
+    width: 90%;
+    padding: 0; }
+
+  .table-caption {
+    display: block;
+    float: right;
+    clear: both;
+    width: 98%;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    margin-left: 1%;
+    margin-right: 1%;
+    vertical-align: baseline;
+    position: relative; }
+
+  div.table-wrapper, table, table.booktabs {
+    width: 85%; }
+
+  div.table-wrapper {
+    border-right: 1px solid #efefef; }
+
+  img {
+    width: 100%; } }
+/**
+ * Syntax highlighting styles
+ */
+.highlight .c {
+  color: #998;
+  font-style: italic; }
+.highlight .err {
+  color: #a61717;
+  background-color: #e3d2d2; }
+.highlight .k {
+  font-weight: bold; }
+.highlight .o {
+  font-weight: bold; }
+.highlight .cm {
+  color: #998;
+  font-style: italic; }
+.highlight .cp {
+  color: #999;
+  font-weight: bold; }
+.highlight .c1 {
+  color: #998;
+  font-style: italic; }
+.highlight .cs {
+  color: #999;
+  font-weight: bold;
+  font-style: italic; }
+.highlight .gd {
+  color: #000;
+  background-color: #fdd; }
+.highlight .gd .x {
+  color: #000;
+  background-color: #faa; }
+.highlight .ge {
+  font-style: italic; }
+.highlight .gr {
+  color: #a00; }
+.highlight .gh {
+  color: #999; }
+.highlight .gi {
+  color: #000;
+  background-color: #dfd; }
+.highlight .gi .x {
+  color: #000;
+  background-color: #afa; }
+.highlight .go {
+  color: #888; }
+.highlight .gp {
+  color: #555; }
+.highlight .gs {
+  font-weight: bold; }
+.highlight .gu {
+  color: #aaa; }
+.highlight .gt {
+  color: #a00; }
+.highlight .kc {
+  font-weight: bold; }
+.highlight .kd {
+  font-weight: bold; }
+.highlight .kp {
+  font-weight: bold; }
+.highlight .kr {
+  font-weight: bold; }
+.highlight .kt {
+  color: #458;
+  font-weight: bold; }
+.highlight .m {
+  color: #099; }
+.highlight .s {
+  color: #d14; }
+.highlight .na {
+  color: #008080; }
+.highlight .nb {
+  color: #0086B3; }
+.highlight .nc {
+  color: #458;
+  font-weight: bold; }
+.highlight .no {
+  color: #008080; }
+.highlight .ni {
+  color: #800080; }
+.highlight .ne {
+  color: #900;
+  font-weight: bold; }
+.highlight .nf {
+  color: #900;
+  font-weight: bold; }
+.highlight .nn {
+  color: #555; }
+.highlight .nt {
+  color: #000080; }
+.highlight .nv {
+  color: #008080; }
+.highlight .ow {
+  font-weight: bold; }
+.highlight .w {
+  color: #bbb; }
+.highlight .mf {
+  color: #099; }
+.highlight .mh {
+  color: #099; }
+.highlight .mi {
+  color: #099; }
+.highlight .mo {
+  color: #099; }
+.highlight .sb {
+  color: #d14; }
+.highlight .sc {
+  color: #d14; }
+.highlight .sd {
+  color: #d14; }
+.highlight .s2 {
+  color: #d14; }
+.highlight .se {
+  color: #d14; }
+.highlight .sh {
+  color: #d14; }
+.highlight .si {
+  color: #d14; }
+.highlight .sx {
+  color: #d14; }
+.highlight .sr {
+  color: #009926; }
+.highlight .s1 {
+  color: #d14; }
+.highlight .ss {
+  color: #990073; }
+.highlight .bp {
+  color: #999; }
+.highlight .vc {
+  color: #008080; }
+.highlight .vg {
+  color: #008080; }
+.highlight .vi {
+  color: #008080; }
+.highlight .il {
+  color: #099; }
+
+body {
+  font-family: 'Catamaran', Futura, "Trebuchet MS", Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333 !important;
+  max-width: 840px;
+  margin: 0 auto !important;
+  padding-left: 0; }
+
+p, ol, ul, .pagination a, .pagination em, table {
+  font-size: 1.3rem; }
+
+h2, h3 {
+  font-style: normal;
+  margin-bottom: 1rem; }
+
+main {
+  margin-top: 20px; }
+
+amp-img {
+  background-color: grey; }
+
+article {
+  padding: 2.5rem 0; }
+
+header {
+  margin-top: 20px; }
+
+figure {
+  margin: 0 0 1em 0; }
+
+.post-meta {
+  margin-top: 10px; }
+
+pre {
+  width: 100%;
+  overflow-x: auto; }
+
+.sidenote, .marginnote {
+  margin-right: -40%;
+  width: 34%;
+  margin-top: .335rem; }
+
+.sidenote:before {
+  content: counter(sidenote-counter) " ";
+  top: -0.5rem;
+  left: -.8em;
+  float: left;
+  width: 0;
+  text-align: right; }
+
+@media (max-width: 760px) {
+  pre {
+    width: 90%;
+    padding: 0; } }
+@media screen and (max-width: 1020px) {
+  p, footer, table, div.table-wrapper-small, div.supertable-wrapper > p, div.booktabs-wrapper {
+    width: 70%; }
+
+  blockquote p {
+    width: 50%; } }
+@media screen and (max-width: 760px) {
+  p, h1, h2, h3, footer {
+    width: 100%; }
+
+  pre.code {
+    width: 87.5%; }
+
+  ul {
+    width: 85%; }
+
+  figure {
+    max-width: 100%; }
+
+  figcaption, figure.fullwidth figcaption {
+    margin-right: 0%;
+    max-width: none; }
+
+  blockquote p, blockquote .footer {
+    width: 90%; }
+
+  .sidenote-number {
+    display: none; } }
+code {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 1.125rem;
+  line-height: 1.6; }
+
+div.highlighter-rouge code {
+  font-size: 0.9rem; }
+
+  </style>
+
+
+
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+</head>
+
+  <body>
+    <header>
+  <div class="page-links">
+    <a class="page-link" href="/">home</a>
+    
+      
+      • <a class="page-link" href="/about/">about</a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</header>
+
+
+    <article>
+
+  <h2 itemprop="name"><a href="" itemprop="url">Making a Game: a Postmortem</a></h2>
+
+  <div class="post-meta">
+    <time datetime="01 June 2016">01 June 2016</time>
+  </div>
+
+  <section>
+    <p><em>Note: This post was originally featured on <a href="http://cse125.ucsd.edu/2016/cse125g1/postmortem">Excessive Furniture</a>, a blog for my final project course at UCSD.</em></p>
+
+<p>We did it!</p>
+
+<p>It’s been an extremely long ten weeks. We all spent most of our time on this project (to the point where I personally didn’t go to any of my other classes’ lectures!), and even though we didn’t end up having to pull any all-nighters (save for Dexter, but those were totally of his own free will) we obviously put a lot of effort into things. <span id="Jeff" class="margin-toggle sidenote-number"></span>
+      <span class="sidenote">Jeff has considerably more lines than us because he committed his 167 code to the repo. Elton doesn’t have many lines because he forgot to commit with his Github email :(</span></p>
+
+<p><img src="http://cse125.ucsd.edu/2016/cse125g1/assets/images/pm/github.png" alt="" /></p>
+
+<p>Now that everything has been finalized, let’s talk about the ten weeks in detail.</p>
+
+<!--more-->
+
+<h2 id="overall-impressions">Overall Impressions</h2>
+
+<p><em>Q: What game did you seek out to make? What did you end up with?</em></p>
+
+<p>At its core, we wanted to make a cooperative puzzle game. We’re all big puzzle game fans, and furthermore we’re all big game <em>design</em> nerds. A lot of the games that come out of CSE125 are competitive, usually in the arena shooter/brawler vein. While competitive shooters certainly do require game design (I’m not about to tell you that Quake isn’t a brilliantly designed game) there are a lot of givens and defaults just because of the genre.</p>
+
+<p>A puzzle game however has almost no prior assumptions in terms of mechanics. Furthermore, a puzzle game is all about the <em>puzzles</em>, which require careful design even outside of the mechanics of the game. We knew a game like this would be difficult to make in the given timeframe, and that we’d probably end up spending a much greater portion of our time on design vs. implementation compared to the other groups. I definitely don’t regret that decision.</p>
+
+<p>Unfortunately, time does catch up. A big part of our game (it’s about robots escaping from prison by the way) was supposed to be the competitive aspect. Not all of the robots were going to escape the prison ship, and we wanted puzzles that while forcing the players to cooperate would keep them on their toes, knowing that at any time any other player can just “accidentally” push the wrong button and open the trap door rather than the real one. Due to the time restraints of the class, we weren’t able to explore this idea, at least not the point that we would be satisfied by. We ended up dropping the entire competitive aspect around Week 8 and focused on making it a strictly-cooperative puzzle game.</p>
+
+<p>The design goals we had during the competitive-phase of our game production kept on through the entire project though. Each puzzle was designed and sequenced in a specific way to force certain player interactions: the prison puzzle cannot be solved if <em>any</em> player doesn’t cooperate. The corridor puzzle teaches players that even if they can split up, they shouldn’t necessarily. The keycards teach the players that the puzzles are connected, even if the individual rooms are separate. When you have four players, you have four actors that you have to control simultaneously, and I feel we did a good job of it.</p>
+
+<p><em>Q: What changed when it came to implementation expectations?</em></p>
+
+<p>We actually implemented a lot of the crazy technical aspects we strove for. From SSAO in week three to octree-based collisions (we had ramps! Ask anyone who’s ever written a game, and they will tell you ramps are impossible), tech wasn’t often a problem for us. We even explored audio much more than I had ever expected. We did however struggle more with particle effects and animations than we expected, and ended up having to drop both.</p>
+
+<p><em>Q: Did things go to schedule?</em></p>
+
+<p>We’ve joked a lot in the prior blog posts about how even though we kept feeling that we were falling behind, we would just check out schedule and find out that we were on track! We definitely underestimated ourselves in many regards when making the schedule.</p>
+
+<p>The big block, one that you’d see coming if you read any of the prior posts, was collision detection. We strove from the beginning to do collision the “right” way, and that cost us dearly. Not only did implementing the octree system take much longer than we expected (we didn’t “stop” working on collision until week 8!!) but it cost us in other regards. Implementing and testing puzzles is surprisingly difficult when you can’t walk into things!</p>
+
+<p>We might have underestimated ourselves, but we surely overestimated Blender. Blender is <em>not</em> a level editor, and even with our <em>ActivatorRegistrator</em><span id="ar" class="margin-toggle sidenote-number"></span>
+      <span class="sidenote">© 2016 Jason Lo, Excessive Furniture.</span> system, we ended up fighting Blender much more than we should have. There really wasn’t an alternative though—a puzzle game requires some sort of level editor, and making a level editor is essentially making a game in itself.</p>
+
+<h2 id="implementation">Implementation</h2>
+
+<p><em>Q: What methodologies did you use? Which ones worked well?</em></p>
+
+<p>We didn’t use any particular development methodologies when making the game, no Kanban boards or user experiences or anything like that.</p>
+
+<p>When it came to development, we did stick to a Git Flow-esque<span id="gitflow" class="margin-toggle sidenote-number"></span>
+      <span class="sidenote"><a href="http://nvie.com/posts/a-successful-git-branching-model/">http://nvie.com/posts/a-successful-git-branching-model/</a></span> workflow where we had <code class="highlighter-rouge">master</code> and <code class="highlighter-rouge">develop</code> branches that housed most of the code, and had independent feature branches that would split off and merge back into <code class="highlighter-rouge">develop</code> as required. We rarely ran into merge errors, due to use preferring a rebase-based workflow, causing us to deal with merge conflicts up front rather than pushing them nervously to the future.</p>
+
+<p>We used Dropbox for asset management, which actually turned out to be much more of a hassle than we expected?? We routinely ran into syncing issues, and at some points Dropbox would serve certain team members us older versions of files that we had uploaded, while giving newer versions to others. Very strange stuff.</p>
+
+<p><em>Q: What difficulties did you have in implementation? Did anything turn out easier than you expected?</em></p>
+
+<p>We’ve gone to lengths explaining how difficult collision was for us. We strove to do it the “right” way, with an octree-based system that would separate our space into octants, allowing us to only consider collisions and raycasting in a local space, rather than across all colliders in our world (of which there were quite a few). It turned out absolutely fabulous though (ramps!!wow) so it’s not as if it wasn’t effort well-spent.</p>
+
+<p>Networking also turned out to be quite difficult, even more difficult than we had imagined going in. We decided to roll our own TCP stack rather than using a library, so we had expected difficulties, but we ran into problems much more frightening than the lag and desync we were expecting. We ran into issues with some clients refusing packets after a certain period of time (with no TCP errors thrown), we ran into issues with a single client stuttering and cause all other clients to follow suit, and we even ran into a bug we deem the “Sanic” bug, where randomly on start all of the clients will run at superspeed for 10-15 seconds. That bug we never figured out how to fix…</p>
+
+<p>Sound was our saving grace. We used the popular FMOD library for sound, and it works extremely well<span id="fmod" class="margin-toggle sidenote-number"></span>
+      <span class="sidenote">After you read the documentation first…</span>. No qualms, it just worked. One of our team members, as well as one our friends, even went on to implement FMOD-based sound in their 167 projects by our suggestions, and were very happy with the results.</p>
+
+<p><em>Q: Time to brag: what parts of the implementation were you really proud of?</em></p>
+
+<p>You don’t have to look at our game for very long to know it looks good. We had resident graphical wiz-kid Jeffrey Johnson on our team, and that decision really paid off. Besides literally doing all of the art, Jeff did most of the graphics programming, giving us real-time point light shadows, screen space ambient occlusion, and even IES-profile simulation for complex-shaped lights. It even runs relatively smoothly<span id="ubisoft" class="margin-toggle sidenote-number"></span>
+      <span class="sidenote">Take that, Ubisoft!</span>.</p>
+
+<p>We’re also really happy with the network <em>infrastructure</em> (not the TCP code driving it all, mind you). All stateful objects, whether it be transforms, mesh data, or even sounds, in our game essentially send their state on changes across the network with no developer interaction. That means that you can write game code as if you were making a single player game, and you got multiplayer for free! We paid a rather high up-front cost getting that to work (Jeff also had to yell at me quite a bit before I agreed to implement it) but I’m so happy with how it turned out. Writing game code is a breeze when you don’t have to worry about sharing state over the network.</p>
+
+<p><em>Q: Did you use anything besides the expected C++?</em></p>
+
+<p>Not really, our game was written with C++ and OpenGL. We did however use GLSL a lot for shaders. The only advice we can offer for that is NVIDIA Nsight is greatly recommend for shader debugging, because you’re going to have a lot of fun debugging shaders without such a tool.</p>
+
+<p><em>Q: How many lines of code did you write?</em></p>
+
+<p>According to Cloc<span id="cloc" class="margin-toggle sidenote-number"></span>
+      <span class="sidenote"><a href="https://github.com/AlDanial/cloc">https://github.com/AlDanial/cloc</a></span>, we had 12376 lines of C++ and 824 lines of GLSL. This includes graphical code from the 167 project our game is based on.</p>
+
+<p><em>Q: How did you handle media content in your game?</em></p>
+
+<p>We used Blender exclusively for our 3D modeling of individual scenes as props, as well as UV unwrapping t. Actual materials were created with the awesome Substance Painter software<span id="marriage" class="margin-toggle sidenote-number"></span>
+      <span class="sidenote">Jeff has a legally recognized relationship with Substance Painter in over 10 states.</span>. Rather that directly attaching materials in Blender, we had a custom configuration-based system that allowed to write material data in <code class="highlighter-rouge">.ini</code> files, allowing us to change properties such as textures, tints, brightness, and the like on the fly without having to reopen Blender. To get things into our game, we used ASSIMP for model loading, and SOIL2<span id="soil2" class="margin-toggle sidenote-number"></span>
+      <span class="sidenote"><a href="https://bitbucket.org/SpartanJ/soil2">https://bitbucket.org/SpartanJ/soil2</a></span> for material loading.</p>
+
+<p>We also used Blender for stitching together the individual scenes and props, as well as giving them metadata that our ActivatorRegistrator system took advantage above.</p>
+
+<p>For sound, we composed audio with Audacity, and did voice effects with the awesome Melodyne software. We included audio in our game with FMOD.</p>
+
+<p><em>Q: Even after all of the above, would you have rather started with a game engine?</em></p>
+
+<p>We briefly discussed this among those of us who have experience with the Unity game engine. We estimated that we could probably remake our game in its current state with Unity in about a week, with the only thing we’d need to learn is networking (I hear though that in recent versions Unity networking works really cleanly). Our game engine doesn’t really do many custom things, and having an existing game engine would give us way more time to spend on game design, something our game sorely depends upon.</p>
+
+<p>Of course, we’d have to do things the Unity Way, and any straying from the Unity Way would cause harm. I could see Unity physics not working extremely well for a platforming game, and Unity also wouldn’t necessarily give us as much freedom in the Graphics department as raw OpenGL would (although we would get a lot more effects for free).</p>
+
+<p><em>Q: Did you use any major libraries? What are your opinions of them?</em></p>
+
+<p>We rolled our own graphics, our own physics, and our own networking. I’m perfectly happy with our graphics, and from what I’ve heard, if you’re not doing physics simulation (which we certainly aren’t, realistic physics make a terrible platformer) then using Bullet will be a struggle, even if it gives us collision for free.</p>
+
+<p>Networking on the other hand is something we’d definitely use a library for. At the end of our day, our underlying networking code just works, and not much more than that. Using a networking library that hundreds of people have worked on gives us reliability and performance. Plus, if we were making an actual game, we’d of course use UDP over TCP to avoid the overheads of TCP, and a networking library might abstract away the technical differences of TCP vs UDP.</p>
+
+<p><em>Q: You’ve talked about group dynamics in a game, what about in game development?</em></p>
+
+<p>Working in a large group is often a balancing act. If everyone is off in their own worlds, not following anyone, people will get lost and the project will never get done. However, if there is one leader that no one can agree with, then mutiny would happen.</p>
+
+<p>In Elton’s personal experience when working with a 60 person team in CSE 112, they started off with no clear leader or instruction and ended up in the first boat: no real tasks, no clear place to go. But when they turned towards the leaders, nobody really agreed with any of them. Only when a clear leader emerged and everybody’s skills and experience lined up right, did things start rolling.</p>
+
+<p>One thing that we quickly learned is the need to trust the competency of your teammates<span id="rocket" class="margin-toggle sidenote-number"></span>
+      <span class="sidenote">I wish I could say the same when playing Rocket League…</span>. I ended up being the task manager of our group, and therefore had to trust that Bert could indeed get wall-sliding to work, or that Elton could indeed get lights to sync over the network. It’s especially hard to trust people you’ve only met recently, but if you don’t and instead just try to implement everything yourself, you’re just going to run out of time, and drive down morale. Trusting everyone to be competent allows you to most effectively divide up tasks which speeds development up along.</p>
+
+<p><em>Q: What would have you done differently if you could do CSE125 all-over again?</em></p>
+
+<p>First, I’d find a better to develop on the lab machines! We spent 15-30 minutes setting up every single time due to the computers being wiped. Elton had the right idea, making an external hard drive his development station.</p>
+
+<p>Development-wise, we’d work a lot harder to get something playable right at the front. It wasn’t until Week 8 that we really got to play around with our ideas and see what was viable, which obviously hurts when it comes to proper game design.</p>
+
+<p>We’d also really try to get hold of an artist. Jeff did a great job, of course, but even Jeff’s skills and time are limited. Having dedicated people would have allowed Jeff to do more programming, as well as getting potentially even cooler art-direction that our feeble programmer-minds could have never thought of.</p>
+
+<p><em>Q: What UCSD courses do you feel prepared you for CSE125?</em></p>
+
+<p>CSE167, obviously. It’s the only OpenGL introductory course you’ll find at UCSD, and even if you’re not knee-deep in Uniform Buffer Objects and Fresnel coefficients, you really should know what the Model, View, and Perspective matrices are, as well as how transformations work, the role of the camera, scene-graphs, all kinds of stuff. CSE167 is also one of the few classes to allow freeform final projects, which will really help you when coming up with a CSE125 project.</p>
+
+<p>CSE124 is almost essential if you want to start networking with sound footing. A lot of our initial networking exploration was just repurposing old CSE124 code.</p>
+
+<p><em>Q: What was the most important thing you learned in the class?</em></p>
+
+<p>I can’t speak for my group, but the most important thing I learned in this class is that shortcuts hurt. It is way too easy to do things the “easy” way just because it’s the quickest, or not very fun to take seriously. Of course, when you just want to get something on the screen, doing things the easy way is often recommend. But if you only take shortcuts, and you don’t remedy those shortcuts as soon as you can, developing actual structure rather than just hacks upon hacks, your codebase will become very unwieldy very fast.</p>
+
+<p>We put a lot more effort into a proper code than I’ve ever done in any of my prior projects<span id="proper" class="margin-toggle sidenote-number"></span>
+      <span class="sidenote">Don’t tell my past employers!</span>, and even with the outrageously-high upfront costs, I’d do it all again because it made our code <em>so</em> much easier to reason with once we started reaching crunch time and brainpower started dropping. Good code pays for itself.</p>
+
+<h2 id="media">Media</h2>
+
+<p>Here’s some media we’ve collected of the game. Enjoy!</p>
+
+<figure class="fullwidth">
+  <amp-img width="903" height="665" layout="responsive" src="http://cse125.ucsd.edu/2016/cse125g1/assets/images/pm/s6.png" alt="Game screenshots" title="Game screenshots"></amp-img>
+</figure>
+
+<figure class="fullwidth">
+  <amp-img width="903" height="665" layout="responsive" src="http://cse125.ucsd.edu/2016/cse125g1/assets/images/pm/s7.png" alt="Game screenshots" title="Game screenshots"></amp-img>
+</figure>
+
+<figure class="fullwidth">
+  <amp-img width="903" height="665" layout="responsive" src="http://cse125.ucsd.edu/2016/cse125g1/assets/images/pm/s2.png" alt="Game screenshots" title="Game screenshots"></amp-img>
+</figure>
+
+<figure class="fullwidth">
+  <amp-img width="903" height="665" layout="responsive" src="http://cse125.ucsd.edu/2016/cse125g1/assets/images/pm/s4.png" alt="Game screenshots" title="Game screenshots"></amp-img>
+</figure>
+
+<figure class="fullwidth">
+  <amp-img width="903" height="665" layout="responsive" src="http://cse125.ucsd.edu/2016/cse125g1/assets/images/pm/s1.png" alt="Game screenshots" title="Game screenshots"></amp-img>
+</figure>
+
+<figure class="fullwidth">
+  <amp-img width="903" height="665" layout="responsive" src="http://cse125.ucsd.edu/2016/cse125g1/assets/images/pm/s3.png" alt="Game screenshots" title="Game screenshots"></amp-img>
+</figure>
+
+<figure class="fullwidth">
+  <amp-img width="903" height="665" layout="responsive" src="http://cse125.ucsd.edu/2016/cse125g1/assets/images/pm/s5.png" alt="Game screenshots" title="Game screenshots"></amp-img>
+</figure>
+
+<figure class="fullwidth">
+  <amp-img width="903" height="665" layout="responsive" src="http://cse125.ucsd.edu/2016/cse125g1/assets/images/w9/armory.png" alt="Game screenshots" title="Game screenshots"></amp-img>
+</figure>
+
+<figure class="fullwidth">
+  <amp-img width="903" height="665" layout="responsive" src="http://cse125.ucsd.edu/2016/cse125g1/assets/images/w9/maze.png" alt="Game screenshots" title="Game screenshots"></amp-img>
+</figure>
+
+<iframe width="100%" height="620" src="https://www.youtube.com/embed/6D8eo8RskyI" frameborder="0" allowfullscreen=""></iframe>
+
+<h2 id="feedback">Feedback</h2>
+
+<p><em>Q: What books do you recommend for learning?</em></p>
+
+<p><em>Real-Time Rendering</em> by Akenine-Moller, Haines, and Hoffman is a book that Jeff recommends time and time again when it comes to all things graphics (Dexter even found use for it when making his collision code!). Thankfully you guys provide the second edition of the book.</p>
+
+<p>Not a book, but <a href="//learnopengl.com">learnopengl.com</a> is an absolutely fantastic resource for anyone getting up to speed with modern OpenGL programming. It teaches everything you need to know (and then some!) while remaining completely approachable.</p>
+
+<p><em>Q: What tips do you have for future students?</em></p>
+
+<ul>
+  <li>Start early. No, really. this isn’t CSE131, you can’t do the assignments the day before they’re due.</li>
+  <li>Establish some sort of methods of communication right from the beginning. We used Slack.</li>
+  <li>Decide on some sort of source control. Make sure everyone is competent with it, and make sure to establish some sort of etiquette on how it should be used.</li>
+  <li>Always communicate what you’re doing. The worst feeling is when you’re halfway working on something and then find out your teammate already did it.</li>
+  <li>Make sure everyone is doing <em>something</em> at all times. Even if it’s just looking through code to make sure they understand how it works, people should always be busy. If someone’s not busy, then
+    <ul>
+      <li>Someone else is <em>too</em> busy and tasks need to be split up</li>
+      <li>You forgot something and are therefore not planning well</li>
+      <li>Someone is blocking the project and that needs to be resolved ASAP (maybe you can help!!)</li>
+    </ul>
+  </li>
+</ul>
+
+<p><em>Q: Any final feedback?</em></p>
+
+<p>For me (and the others I’m sure), CSE 125 is a course that I’ve been waiting to take since my freshman year at UCSD, and I’m so happy that I’ve been able to be a part of it with my group members. So definitely don’t stop doing it! I want to come by next year and watch next year’s presentation!</p>
+
+<p>One of the biggest blocks for us was the work environment. From the computers being reset on log-off (we’ve lost work a couple of times due to that), to non-CSE 125 students taking space in the lab even though it’s reserved, to the darn department destroying the hallway and making all foot traffic go through us, B220 had to have been my least favorite part of CSE 125. Obviously the latter problem was a situation specific to us, but the rest were actively bothersome. The problem though is I can’t really see how this would be resolved—it honestly seems like things were handled the best that they could.</p>
+
+<p>Obviously such things can’t be forced, but it would be great if more groups in the future made games that didn’t occupy the competitive arena space. We were quite surprised when we found out that we were the first cooperative puzzler team! It would be great if more teams tried super-wacky ideas (not to put down the other teams; from the team-based naval game to capture-the-farm I really loved the other games this year). Perhaps we could get a speaker to come and talk about game design? Not having experience with/time for game design seems to be the biggest reason why wacky games might not be coming out of CSE 125.</p>
+
+<p><em>Q: Anything else?</em></p>
+
+<p>Thank you Professor Voelker and Ruiqing for the best closing of our time at UCSD that we could have ever wished for!</p>
+
+  </section>
+
+    <footer class="site-footer">
+   <section class="copyright">All content copyright <a href="mailto:">Jason Lo</a> &copy; 2016 &bull; All rights reserved.</section>
+</footer>
+
+
+  </div>
+</article>
+
+  </body>
+</html>

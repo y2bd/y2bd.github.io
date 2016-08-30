@@ -3,7 +3,27 @@ $baseurl: '{{ site.baseurl }}';
 $grey-color: #828282;
 
 @import 'tufte';
-// @import 'syntax-highlighting';
+@import 'syntax-highlighting';
+
+body {
+  font-family: 'Catamaran', Futura, "Trebuchet MS", Arial, sans-serif;
+
+  background-color: #f9f9f9;
+  color: #333 !important;
+
+  max-width: 840px;
+  margin: 0 auto !important;
+  padding-left: 0;
+}
+
+p, ol, ul, .pagination a, .pagination em, table {
+    font-size: 1.3rem;
+}
+
+h2, h3 {
+  font-style: normal;
+  margin-bottom: 1rem;
+}
 
 main {
   margin-top: 20px;
@@ -21,14 +41,32 @@ header {
   margin-top: 20px;
 }
 
+figure {
+  margin: 0 0 1em 0;
+}
+
 .post-meta {
   margin-top: 10px;
 }
 
 pre {
-  width: 52.5%;
-  padding-left: 2.5%;
+  width: 100%;
   overflow-x: auto;
+}
+
+.sidenote, .marginnote {
+  margin-right: -40%;
+  width: 34%;
+      margin-top: .335rem;
+}
+
+.sidenote:before {
+    content: counter(sidenote-counter) " ";
+    top: -0.5rem;
+    left: -.8em;
+    float: left;
+    width: 0;
+    text-align: right;
 }
 
 @media (max-width: 760px) {
@@ -38,8 +76,26 @@ pre {
   }
 }
 
+@media screen and (max-width: 1020px) {
+   p, footer, table, div.table-wrapper-small, div.supertable-wrapper > p, div.booktabs-wrapper { width: 70%; }
+   blockquote p { width: 50%; }
+}
+
+@media screen and (max-width: 760px) { p, h1, h2, h3, footer { width: 100%; }
+                                       pre.code { width: 87.5%; }
+                                       ul { width: 85%; }
+                                       figure { max-width: 100%; }
+                                       figcaption, figure.fullwidth figcaption { margin-right: 0%;
+                                                                                 max-width: none; }
+                                       blockquote p, blockquote .footer { width: 90%; }
+                                       .sidenote-number {display:none;}}
+
 code {
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
   font-size: 1.125rem;
   line-height: 1.6;
+}
+
+div.highlighter-rouge code {
+  font-size: 0.9rem;
 }

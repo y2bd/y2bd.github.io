@@ -2,21 +2,22 @@
 class ImageTag < Liquid::Tag
   def initialize(tag_name, args, tokens)
     super
-    @src, @width, @height, @option = args.split
+    @src, @alt, @width, @height, @option = args.split(/\s(?=(?:[^"]|"[^"]*")*$)/)
+    @alt = @alt[1...-1]
   end
 
   def render(context)
     if @option == 'fw'
       <<-MARKUP.strip
-        <figure class="fullwidth"><amp-img width="#{@width}" height="#{@height}" layout="responsive" src="#{context["site"]["baseurl"]}#{@src}"></amp-img></figure>
+        <figure class="fullwidth"><amp-img width="#{@width}" height="#{@height}" layout="responsive" src="#{context["site"]["baseurl"]}#{@src}" alt="#{@alt}" title="#{@alt}"></amp-img></figure>
       MARKUP
     elsif @option == 'raw'
       <<-MARKUP.strip
-        <amp-img width="#{@width}" height="#{@height}" src="#{@src}"></amp-img>
+        <amp-img width="#{@width}" height="#{@height}" src="#{@src}" alt="#{@alt}" title="#{@alt}"></amp-img>
       MARKUP
     else
       <<-MARKUP.strip
-        <figure><amp-img width="#{@width}" height="#{@height}" layout="responsive" src="#{context["site"]["baseurl"]}#{@src}"></amp-img></figure>
+        <figure><amp-img width="#{@width}" height="#{@height}" layout="responsive" src="#{context["site"]["baseurl"]}#{@src}" alt="#{@alt}" title="#{@alt}"></amp-img></figure>
       MARKUP
     end
   end
